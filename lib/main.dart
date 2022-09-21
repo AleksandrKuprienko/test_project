@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:test_project/data/country.dart';
 import 'package:test_project/presentation/pages/countrys_list/country_list.dart';
 import 'package:test_project/presentation/pages/details/details_page.dart';
+import 'package:test_project/presentation/pages/error/error.dart';
 import 'package:test_project/presentation/pages/home/home.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
     navigatorKey: GlobalKey(),
     initialLocation: '/',
     debugLogDiagnostics: true,
+    errorBuilder: ((context, state) => ErrorPage(exception: state.error!)),
     routes: [
       GoRoute(
         path: '/',
